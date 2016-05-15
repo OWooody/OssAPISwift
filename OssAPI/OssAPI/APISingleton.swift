@@ -18,7 +18,7 @@ class APISingleton {
     
     /// Make the constructor private to prevent creating objects.
     private init() {
-        
+        // Testing Wakatime.
         // Configure the alamofire manager with some customization.
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.timeoutIntervalForResource = CONSTANTS.Backend.TIME_OUT // Set the max timeout time.
@@ -35,6 +35,11 @@ class APISingleton {
      */
     static func getInstance() -> APISingleton {
         return sharedInstance
+    }
+    
+    func parse<T>(object: AnyObject) -> Result<T> {
+        //let value = Mapper<Result<Salon>>().map(object)
+        return Mapper<Result<T>>().map(object)!
     }
     
     /**

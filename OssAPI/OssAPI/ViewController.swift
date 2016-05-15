@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         // TEST THE API.
         let URLRequest = Router.ReadAllObjects(SalonService())
         api.call(URLRequest) { data, error in
+            
             //log.info(data)
             let salon = SalonService.parse(data!)
             print(salon[0].branches)
