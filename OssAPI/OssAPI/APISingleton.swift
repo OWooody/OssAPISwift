@@ -21,8 +21,8 @@ class APISingleton {
         
         // Configure the alamofire manager with some customization.
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.timeoutIntervalForResource = BackendCONSTANTS.TIME_OUT // Set the max timeout time.
-        configuration.timeoutIntervalForRequest = BackendCONSTANTS.TIME_OUT // Set the max timeout time.
+        configuration.timeoutIntervalForResource = CONSTANTS.Backend.TIME_OUT // Set the max timeout time.
+        configuration.timeoutIntervalForRequest = CONSTANTS.Backend.TIME_OUT // Set the max timeout time.
         self.manager = Alamofire.Manager(configuration: configuration)
     }
     

@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A5C50FA1CE647C900667EA9 /* BackendCONSTANTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C50F91CE647C900667EA9 /* BackendCONSTANTS.swift */; };
-		4A5C50FC1CE647D700667EA9 /* FrontendCONSTANTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C50FB1CE647D700667EA9 /* FrontendCONSTANTS.swift */; };
+		4A5C50FA1CE647C900667EA9 /* CONSTANTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C50F91CE647C900667EA9 /* CONSTANTS.swift */; };
 		4A5C50FE1CE6486300667EA9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5C50FD1CE6486300667EA9 /* Router.swift */; };
 		4A7893E81CE293DA004956A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7893E71CE293DA004956A3 /* AppDelegate.swift */; };
 		4A7893EA1CE293DA004956A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7893E91CE293DA004956A3 /* ViewController.swift */; };
@@ -28,8 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A5C50F91CE647C900667EA9 /* BackendCONSTANTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendCONSTANTS.swift; sourceTree = "<group>"; };
-		4A5C50FB1CE647D700667EA9 /* FrontendCONSTANTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontendCONSTANTS.swift; sourceTree = "<group>"; };
+		4A5C50F91CE647C900667EA9 /* CONSTANTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CONSTANTS.swift; sourceTree = "<group>"; };
 		4A5C50FD1CE6486300667EA9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4A7893E41CE293DA004956A3 /* OssAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OssAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7893E71CE293DA004956A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,15 +71,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4A5C50F81CE647B600667EA9 /* CONSTANTS */ = {
-			isa = PBXGroup;
-			children = (
-				4A5C50F91CE647C900667EA9 /* BackendCONSTANTS.swift */,
-				4A5C50FB1CE647D700667EA9 /* FrontendCONSTANTS.swift */,
-			);
-			name = CONSTANTS;
-			sourceTree = "<group>";
-		};
 		4A7893DB1CE293DA004956A3 = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				4A9F32FC1CE699BC00EA3363 /* Common */,
+				4A9F32F31CE694B300EA3363 /* ErrorHandling */,
 				4A9F32FB1CE699A100EA3363 /* Backend */,
+				4A8A22771CE8ED46005F774D /* UIControllers */,
 				4A7893E71CE293DA004956A3 /* AppDelegate.swift */,
 				4A7893E91CE293DA004956A3 /* ViewController.swift */,
 				4A7893EB1CE293DA004956A3 /* Main.storyboard */,
@@ -123,6 +114,13 @@
 				4A9F32F11CE68ECE00EA3363 /* APISingleton.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		4A8A22771CE8ED46005F774D /* UIControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UIControllers;
 			sourceTree = "<group>";
 		};
 		4A9F32F31CE694B300EA3363 /* ErrorHandling */ = {
@@ -148,8 +146,7 @@
 		4A9F32FC1CE699BC00EA3363 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				4A9F32F31CE694B300EA3363 /* ErrorHandling */,
-				4A5C50F81CE647B600667EA9 /* CONSTANTS */,
+				4A5C50F91CE647C900667EA9 /* CONSTANTS.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -306,11 +303,10 @@
 				4A9F32F91CE696AD00EA3363 /* ErrorHandler.swift in Sources */,
 				4AF3CFE51CE66E93008D0D31 /* Branch.swift in Sources */,
 				4A7893EA1CE293DA004956A3 /* ViewController.swift in Sources */,
-				4A5C50FA1CE647C900667EA9 /* BackendCONSTANTS.swift in Sources */,
+				4A5C50FA1CE647C900667EA9 /* CONSTANTS.swift in Sources */,
 				4AF3CFE11CE65D82008D0D31 /* Salon.swift in Sources */,
 				4A5C50FE1CE6486300667EA9 /* Router.swift in Sources */,
 				4A9F32F21CE68ECE00EA3363 /* APISingleton.swift in Sources */,
-				4A5C50FC1CE647D700667EA9 /* FrontendCONSTANTS.swift in Sources */,
 				4AF3CFE31CE66D7D008D0D31 /* Object.swift in Sources */,
 				4A7893E81CE293DA004956A3 /* AppDelegate.swift in Sources */,
 				4A9F32F51CE694C300EA3363 /* ErrorTypes.swift in Sources */,

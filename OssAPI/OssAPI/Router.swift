@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 /// Define the base api server url.
-let baseApiUrl = BackendCONSTANTS.API_URL
+let baseApiUrl = CONSTANTS.Backend.API_URL
 
 /// Define the user authentication token.
 var OAuthToken: String?
