@@ -1,0 +1,6 @@
+framework module Pods_OssAPI {
+  umbrella header "Pods-OssAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}
