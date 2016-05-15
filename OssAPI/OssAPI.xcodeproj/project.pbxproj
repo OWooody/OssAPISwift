@@ -14,6 +14,7 @@
 		4A7893ED1CE293DA004956A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7893EB1CE293DA004956A3 /* Main.storyboard */; };
 		4A7893EF1CE293DA004956A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7893EE1CE293DA004956A3 /* Assets.xcassets */; };
 		4A7893F21CE293DA004956A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7893F01CE293DA004956A3 /* LaunchScreen.storyboard */; };
+		4A8A22791CE8F1AC005F774D /* ObjectResponseSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A22781CE8F1AC005F774D /* ObjectResponseSerializable.swift */; };
 		4A9F32F21CE68ECE00EA3363 /* APISingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F32F11CE68ECE00EA3363 /* APISingleton.swift */; };
 		4A9F32F51CE694C300EA3363 /* ErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F32F41CE694C200EA3363 /* ErrorTypes.swift */; };
 		4A9F32F71CE695DD00EA3363 /* APIErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F32F61CE695DD00EA3363 /* APIErrorHandler.swift */; };
@@ -36,6 +37,7 @@
 		4A7893EE1CE293DA004956A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A7893F11CE293DA004956A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A7893F31CE293DA004956A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A8A22781CE8F1AC005F774D /* ObjectResponseSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectResponseSerializable.swift; sourceTree = "<group>"; };
 		4A9F32F11CE68ECE00EA3363 /* APISingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISingleton.swift; sourceTree = "<group>"; };
 		4A9F32F41CE694C200EA3363 /* ErrorTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTypes.swift; sourceTree = "<group>"; };
 		4A9F32F61CE695DD00EA3363 /* APIErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorHandler.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				4AF3CFDE1CE651F3008D0D31 /* ObjectRouter.swift */,
 				4A5C50FD1CE6486300667EA9 /* Router.swift */,
 				4A9F32F11CE68ECE00EA3363 /* APISingleton.swift */,
+				4A8A22781CE8F1AC005F774D /* ObjectResponseSerializable.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				4AF3CFDF1CE651F3008D0D31 /* ObjectRouter.swift in Sources */,
 				4A9F32F91CE696AD00EA3363 /* ErrorHandler.swift in Sources */,
+				4A8A22791CE8F1AC005F774D /* ObjectResponseSerializable.swift in Sources */,
 				4AF3CFE51CE66E93008D0D31 /* Branch.swift in Sources */,
 				4A7893EA1CE293DA004956A3 /* ViewController.swift in Sources */,
 				4A5C50FA1CE647C900667EA9 /* CONSTANTS.swift in Sources */,
