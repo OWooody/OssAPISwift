@@ -22,6 +22,12 @@ enum APIStatusCode: Int {
     
 }
 
+enum APIError: ErrorType {
+    case ConnectionError(NSError)
+    case InvalidResponse(AnyObject?)
+    case ParseError(AnyObject?)
+}
+
 /// The AccountError defines the errors that may occur when the user enters any account or user information.
 ///
 /// - InvalidPhone: The user phone number is invalid (either empty or not complete).
