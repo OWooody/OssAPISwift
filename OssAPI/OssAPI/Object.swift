@@ -14,6 +14,8 @@ class Object: Mappable {
     
     var id: String!
     
+    init() {}
+    
     required init?(_ map: Map) {}
     
     /// Map the model attributes to the json representation and vise versa.

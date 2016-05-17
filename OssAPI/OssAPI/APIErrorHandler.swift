@@ -10,15 +10,13 @@ import Foundation
 
 class APIErrorHandler: ErrorHandler {
     
-    static func handle(error: NSError, statusCode: Int) {
+    static func handle(error: ErrorType) {
         
-        switch statusCode {
-        case APIStatusCode.Timeout.rawValue:
-            log.error("Timeout")
-        case APIStatusCode.PageNotFound.rawValue:
-            log.error("Page Not Found")
+        switch error {
+        case APIError.ParseError:
+            log.error("Parse Error")
         default:
-            log.error(statusCode)
+            log.error("Handler: \(error)")
         }
     }
 }

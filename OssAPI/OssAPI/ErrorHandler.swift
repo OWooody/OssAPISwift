@@ -13,5 +13,5 @@ protocol ErrorHandler {
     
     /// Handle any type of NSError across the app.
     /// - parameter error:The error object.
-    static func handle(error: NSError, statusCode: Int)
+    static func handle(error: ErrorType)
 }

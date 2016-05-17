@@ -15,21 +15,21 @@ import SwiftTask
 /// The APISingleton class has the api instance that will be used across the system, the class uses the singleton design pattern to hold only one object.
 class APISingleton {
     
+    /// Create the singleton object.
+    static let sharedInstance = APISingleton()
+    
     /// Initialize the alamofire request manager.
     var manager = Alamofire.Manager.sharedInstance
     
     /// Make the constructor private to prevent creating objects.
     private init() {
-        // Testing Wakatime.
+        
         // Configure the alamofire manager with some customization.
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.timeoutIntervalForResource = CONSTANTS.Backend.TIME_OUT // Set the max timeout time.
         configuration.timeoutIntervalForRequest = CONSTANTS.Backend.TIME_OUT // Set the max timeout time.
         self.manager = Alamofire.Manager(configuration: configuration)
     }
-    
-    /// Create the singleton object.
-    static let sharedInstance = APISingleton()
     
     /**
      Get the shared instance.
@@ -39,18 +39,13 @@ class APISingleton {
         return sharedInstance
     }
     
-    func parse<T>(object: AnyObject) -> Result<T> {
-        //let value = Mapper<Result<Salon>>().map(object)
-        return Mapper<Result<T>>().map(object)!
-    }
-    
     /**
      The prepareParams function converts the object passed in the parameter to the json string representation.
      - parameter object:The object that will be parsed into string json format.
      - returns: The json string dictionary.
      */
-    static func prepareParameters(object: [Object]) -> [[String:AnyObject]] {
-        return Mapper().toJSONArray(object)
+    func prepareParameters(object: Object) -> [String:AnyObject] {
+        return Mapper().toJSON(object)
     }
     
     /// Shorter header of the call method.
@@ -68,29 +63,36 @@ class APISingleton {
         
         // Define the react task to track the api call.
         self.manager.request(urlRequest)
-            .validate() // Automatically validate the data returned (type json and the response is between 200..299).
+            //.validate() // Automatically validate the data returned (type json and the response is between 200..299).
             .responseJSON { response in
                 switch response.result {
+                
                 case .Success:
                     
-                    // Parse the result value to the object type as an array.
-                    let parsedObject: [T] = Mapper<T>().mapArray(response.result.value)!
+                    var result: [T]
                     
-                    completionHandler(parsedObject, nil)
+                    if(urlRequest.URLRequest.HTTPMethod == Alamofire.Method.GET.rawValue) {
+                        
+                        // Parse the result value to the object type as an array.
+                        if let _ = Mapper<T>().mapArray(response.result.value) {
+                            result = Mapper<T>().mapArray(response.result.value)! // Parse succeeded.
+                        } else {
+                            result = []
+                            APIErrorHandler.handle(APIError.ParseError(response.result.value)) // Parse error.
+                        }
+                    } else {
+                        result = []
+                    }
+                    print(response)
+                    // Return to the caller with the result.
+                    completionHandler(result, nil)
                     
                 case .Failure(let error):
-                    
+                    //print(urlRequest.URLRequest.)
                     // Check if the user wants to handle the error globally (default) or not.
-                    //                        if(canHandleErrorGlobally == true) {
-                    //
-                    //                            // Check if there is a http status code or not.
-                    //                            if (response.response?.statusCode) != nil {
-                    //                                APIErrorHandler.handle(error, statusCode: (response.response?.statusCode)!) // Handle the error globally.
-                    //                            } else {
-                    //                                APIErrorHandler.handle(error, statusCode: error.code) // Handle the error globally.
-                    //                            }
-                    //
-                    //                        }
+                    if(canHandleErrorGlobally == true) {
+                        APIErrorHandler.handle(APIError.ConnectionError(error)) // Handle error globally.
+                    }
                     
                     // Retry the api request and keep track of the retry count.
                     if(retryCount > 0) {
@@ -99,7 +101,7 @@ class APISingleton {
                             self.call(urlRequest, object: object, canHandleErrorGlobally: canHandleErrorGlobally, retryCount: (retryCount-1), completionHandler: completionHandler)
                         }
                     } else {
-                        completionHandler([], error)
+                        completionHandler([], error) // Return to the caller with an error.
                     }
                 
                 }

@@ -15,7 +15,7 @@ struct CONSTANTS {
     struct Backend {
         
         /// Define the api url server.
-        static let API_URL = "http://private-2e13f-beautyloop.apiary-mock.com"
+        static let API_URL = "http://beautyloopdummyapi.azurewebsites.net/api"//"http://private-2e13f-beautyloop.apiary-mock.com"
         
         /// Define the max timeout time for the api call.
         static let TIME_OUT: NSTimeInterval = 15

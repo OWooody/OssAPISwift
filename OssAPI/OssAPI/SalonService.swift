@@ -24,15 +24,15 @@ class SalonService: ObjectRouter {
 //    }
     
     func createObjectPath() -> String {
-        return ""
+        return "Salons"
     }
     
     func readObjectPath(identifier: String) -> String {
-        return "salon"
+        return "GetSalon"
     }
     
     func readAllObjectsPath() -> String {
-        return "salonss"
+        return "Salons"
     }
     
     func updateObjectPath(identifier: String) -> String {
