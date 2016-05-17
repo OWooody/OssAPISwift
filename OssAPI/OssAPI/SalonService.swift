@@ -32,7 +32,7 @@ class SalonService: ObjectRouter {
     }
     
     func readAllObjectsPath() -> String {
-        return "salons"
+        return "salonss"
     }
     
     func updateObjectPath(identifier: String) -> String {

@@ -18,13 +18,12 @@ class ViewController: UIViewController {
         
         // TEST THE API.
         let URLRequest = Router.ReadAllObjects(SalonService())
-        api.call(URLRequest) { data, error in
-            
-            //log.info(data)
-            //let salon = SalonService.parse(data!)
-            //print(salon[0].branches)
+        api.call(URLRequest, object: Salon.self, canHandleErrorGlobally: true, retryCount: 3) { object, error in
+            log.info(object)
             log.error(error)
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

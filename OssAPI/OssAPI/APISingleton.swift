@@ -18,10 +18,6 @@ class APISingleton {
     /// Initialize the alamofire request manager.
     var manager = Alamofire.Manager.sharedInstance
     
-    // Define the progress and alamofire task using react.
-    typealias Progress = (bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64)
-    typealias AlamofireTask = Task<Progress, String, NSError>
-    
     /// Make the constructor private to prevent creating objects.
     private init() {
         // Testing Wakatime.
@@ -58,8 +54,8 @@ class APISingleton {
     }
     
     /// Shorter header of the call method.
-    func call(urlRequest: URLRequestConvertible, completionHandler: (AnyObject?, NSError?) -> ()) {
-        call(urlRequest, canHandleErrorGlobally: true, completionHandler: completionHandler)
+    func call<T: Mappable>(urlRequest: URLRequestConvertible, object: T.Type, completionHandler: ([T], NSError?) -> ()) {
+        call(urlRequest, object: object, canHandleErrorGlobally: true, retryCount: 1, completionHandler: completionHandler)
     }
     
     /**
@@ -68,40 +64,47 @@ class APISingleton {
      - parameter canHandleErrorGlobally:Decide wither the error should be handled the default way 'true' or the user wants to handle it 'false'.
      - parameter completionHandler:Void function that will complete the excecution of the app when the api server responds.
      */
-    func call(urlRequest: URLRequestConvertible, canHandleErrorGlobally: Bool, completionHandler: (AnyObject?, NSError?) -> ()) {
+    func call<T: Mappable>(urlRequest: URLRequestConvertible, object: T.Type, canHandleErrorGlobally: Bool, retryCount: Int, completionHandler: ([T], NSError?) -> ()) {
         
         // Define the react task to track the api call.
-        let task  = AlamofireTask { progress, fulfill, reject, configure in
-            self.manager.request(urlRequest)
-                .validate() // Automatically validate the data returned (type json and the response is between 200..299).
-                .progress { bytesWritten, totalBytesWritten, totalBytesExpectedToWrite in // Track the request progress.
-                    progress((bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) as Progress)}
-                .responseJSON { response in
-                    switch response.result {
-                    case .Success:
-                        fulfill("Ok")
-                        //completionHandler(response.result.value, nil)
-                    case .Failure(let error):
-                        
-                        // Check if the user wants to handle the error globally (default) or not.
-                        if(canHandleErrorGlobally == true) {
-                            
-                            // Check if there is a http status code or not.
-                            if (response.response?.statusCode) != nil {
-                                APIErrorHandler.handle(error, statusCode: (response.response?.statusCode)!) // Handle the error globally.
-                            } else {
-                                APIErrorHandler.handle(error, statusCode: error.code) // Handle the error globally.
-                            }
-                            
+        self.manager.request(urlRequest)
+            .validate() // Automatically validate the data returned (type json and the response is between 200..299).
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    // Parse the result value to the object type as an array.
+                    let parsedObject: [T] = Mapper<T>().mapArray(response.result.value)!
+                    
+                    completionHandler(parsedObject, nil)
+                    
+                case .Failure(let error):
+                    
+                    // Check if the user wants to handle the error globally (default) or not.
+                    //                        if(canHandleErrorGlobally == true) {
+                    //
+                    //                            // Check if there is a http status code or not.
+                    //                            if (response.response?.statusCode) != nil {
+                    //                                APIErrorHandler.handle(error, statusCode: (response.response?.statusCode)!) // Handle the error globally.
+                    //                            } else {
+                    //                                APIErrorHandler.handle(error, statusCode: error.code) // Handle the error globally.
+                    //                            }
+                    //
+                    //                        }
+                    
+                    // Retry the api request and keep track of the retry count.
+                    if(retryCount > 0) {
+                        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
+                        dispatch_after(delay, dispatch_get_main_queue()) {
+                            self.call(urlRequest, object: object, canHandleErrorGlobally: canHandleErrorGlobally, retryCount: (retryCount-1), completionHandler: completionHandler)
                         }
-                        reject(error)
-                        return
-                        //completionHandler(nil, error)
+                    } else {
+                        completionHandler([], error)
                     }
-            }
-            
-            return
+                
+                }
         }
+        
     }
     
     
