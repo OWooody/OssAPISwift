@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EDA3B835FA4E683403D3A5EA'
+               BlueprintIdentifier = '06D475E0AE48C448E894E992'
                BlueprintName = 'Pods-OssAPI'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_OssAPI.framework'>

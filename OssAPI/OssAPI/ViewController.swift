@@ -21,9 +21,8 @@ class ViewController: UIViewController {
         api.call(URLRequest) { data, error in
             
             //log.info(data)
-            let s: Salon!
-            //let salon = api.parse(data!)//SalonService.parse(data!)
-            print(salon[0].branches)
+            //let salon = SalonService.parse(data!)
+            //print(salon[0].branches)
             log.error(error)
         }
     }

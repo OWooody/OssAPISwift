@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Result<T: Mappable>: Mappable {
+class Result<T: ObjectResult>: Mappable {
     
     /// Define the generic model.
     var result: T?

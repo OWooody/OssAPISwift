@@ -9,13 +9,8 @@
 import Foundation
 import ObjectMapper
 
-protocol ObjectResult: Mappable {
+protocol ObjectResult {
     
-    /// Define the generic model.
-    //var result: T?
+    func parse<T: Result<T>>(data: AnyObject) -> T
     
-    init?(_ map: Map)
-    
-    /// Map the generic model to a specific object.
-    func mapping(map: Map)
 }

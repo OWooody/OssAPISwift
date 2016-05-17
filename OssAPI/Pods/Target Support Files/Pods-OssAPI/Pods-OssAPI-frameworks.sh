@@ -87,11 +87,15 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-OssAPI/Alamofire.framework"
   install_framework "Pods-OssAPI/Locksmith.framework"
   install_framework "Pods-OssAPI/ObjectMapper.framework"
+  install_framework "Pods-OssAPI/ReactKit.framework"
+  install_framework "Pods-OssAPI/SwiftTask.framework"
   install_framework "Pods-OssAPI/SwiftyBeaver.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-OssAPI/Alamofire.framework"
   install_framework "Pods-OssAPI/Locksmith.framework"
   install_framework "Pods-OssAPI/ObjectMapper.framework"
+  install_framework "Pods-OssAPI/ReactKit.framework"
+  install_framework "Pods-OssAPI/SwiftTask.framework"
   install_framework "Pods-OssAPI/SwiftyBeaver.framework"
 fi

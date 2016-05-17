@@ -24,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftTask.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyBeaver.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,6 +42,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1BFBB9F643FF42F4CD5BF83C79946140</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>421382DF992B9DF66837B99C5E4BABBA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
@@ -42,17 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D0B9FA5F4978C17AC578C0888578C5E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D5D6200D4BE741574DBD4FB768A6F55B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E87163B3CE61E49973695D563915BC24</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBD97F93558D420FEFEC0C76168F2C9D</key>
+		<key>DC5D01A57E2F89AB1A5AEED88E0F4FA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -15,9 +15,13 @@ class SalonService: ObjectRouter {
     
     /// This method provides the data returned from the data source (e.g api) as an object array .
     /// - parameter data:The data returned from the data source.
-    static func parse(data: AnyObject) -> [Salon] {
-        return Mapper<Salon>().mapArray(data)!
-    }
+//    static func parse(data: AnyObject) -> [Salon] {
+//        return Mapper<Salon>().mapArray(data)!
+//    }
+    
+//    func parse<T : Result<Salon>>(data: AnyObject) -> Salon {
+//        return Mapper<Salon>().map(data)!
+//    }
     
     func createObjectPath() -> String {
         return ""
