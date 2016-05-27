@@ -2,13 +2,23 @@
 
 OssAPI is a Swift API template that makes dealing with objects and api calls super easy!
 
-  - Type some Markdown on the left
-  - See HTML in the right
-  - Magic
-
+## **Introduction**
 ### Features:
   - Create objects
   - Drag and drop files into Dillinger
   - Export documents as Markdown, HTML and PDF
 
-### Component Libraries:
+### Requirements:
+In order to use the template, you need to have the following libraries in your project:
+- [Alamofire](https://github.com/Alamofire/Alamofire)
+- [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
+
+### Structure
+
+
+## **Usage**
+### Create Object
+### 
+
+
+## **How it works**
