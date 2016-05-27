@@ -1,0 +1,30 @@
+digraph G {
+	node [shape=box];
+	"ReactKit" -> {};
+	"SwiftTask-umbrella" -> "SwiftTask";
+	"ObjectMapper-umbrella" -> {};
+	"Alamofire-umbrella" -> {};
+	"SwiftTask" -> {};
+	"Locksmith-dummy" -> {};
+	"Locksmith" -> {};
+	"ReactKit-dummy" -> {};
+	"ReactKit-umbrella" -> "ReactKit";
+	"Pods-OssAPI-umbrella" -> {};
+	"Alamofire-dummy" -> {};
+	"SwiftTask-dummy" -> {};
+	"ObjectMapper-dummy" -> {};
+	"SwiftyBeaver-dummy" -> {};
+	"Pods-OssAPI-dummy" -> {};
+	"SwiftyBeaver-umbrella" -> {};
+	"Locksmith-umbrella" -> "Locksmith";
+	
+	"ObjectMapper-prefix" [color=red];
+	"Alamofire-prefix" [color=red];
+	"SwiftyBeaver-prefix" [color=red];
+	"ReactKit-prefix" [color=red];
+	"SwiftTask-prefix" [color=red];
+	"Locksmith-prefix" [color=red];
+	
+	edge [color=blue, dir=both];
+}
+
