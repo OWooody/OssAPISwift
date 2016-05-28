@@ -1,6 +1,9 @@
-# OssAPI
+# OssAPP
+```Connect your app with your api in 10 minutes only!``` 
 
 OssAPI is a Swift API template that makes dealing with objects and api calls super easy!
+
+
 
 ## **Introduction**
 ### Features:
@@ -15,7 +18,16 @@ In order to use the template, you need to have the following libraries in your p
 
 ### Structure
 ![OssAPI Template Structure](http://i.imgur.com/en7vBSV.png)
-The template is structured in a way to make it simple to use, 
+
+The template is structured in a way to make it simple to use.
+When your first open the template you will find 4 groups:
+- **Common:** This group holds the app constants (e.g base api url, some keys, etc..).
+- **ErrorHandling:** All the error handling logic and code is implemented here, you will find some prepared classes inside this group to help you better handle the app errors.
+- ***Backend:*** This is the core of the template which handles all the api requests, this folder has 3 sub-groups:
+    - **Objects:** In this group you will be creating your objects (models), see the **Usage** section below to know how to create your objects.
+    - **API:** [DON'T PLAY WITH THIS CLASS PLEASE, UNLESS YOU WANT TO :p), this class has the core logic of the template and its made in a modular and generic way that makes this template live!
+    - **Services:** In this group you will be creating a service for each object class, this service tells the api what calls will be made when you want to create, get, update, or delete an object through an api request.
+
 
 
 ## **Usage**
