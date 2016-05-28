@@ -43,11 +43,8 @@ The ```override func mapping(map: Map)``` is inheretid from the ```Mappable``` i
 
 
 ## **How it works**
+So, how does all this magic works! Well the answer is a bit easy.
+Coming Soon ;)
 
-
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
-
-### Version
+## **Version**
 1.0.0
-
-### Installation
