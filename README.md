@@ -33,7 +33,25 @@ When your first open the template you will find 4 groups:
 ## **Usage**
 ### Create your Objects
 1. First thing start by creating the raw objects (models) in seperate classes.
-![Object Example](http://i.imgur.com/GkFt4SP.png)
+```
+import Foundation
+import ObjectMapper
+
+class Employee: Object {
+    
+    // 'id' variable is already initialized in the 'Object' class.
+    var name: String!
+    var department: String!
+    var branch: Branch!
+    
+    override func mapping(map: Map) {
+        self.name <- map["EmployeeName"]
+        self.department <- map["Department"]
+        self.branch <- map["Branch"]
+    }
+    
+}
+```
 The ```override func mapping(map: Map)``` is inheretid from the ```Mappable``` interface which comes with the ```ObjectMapper``` library.
 2. Make your class extend the ```Object``` class.
 3. Map each instance variable in the object class with its corresponding object that is returned from the api.
