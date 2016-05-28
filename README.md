@@ -9,9 +9,7 @@
 
 ## **Introduction**
 ### Features:
-  - Create objects
-  - Drag and drop files into Dillinger
-  - Export documents as Markdown, HTML and PDF
+  - Coming Soon!
 
 ### Requirements:
 In order to use the template, you need to have the following libraries in your project:
