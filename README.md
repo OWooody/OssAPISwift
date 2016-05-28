@@ -18,6 +18,8 @@ In order to use the template, you need to have the following libraries in your p
 
 ## **Usage**
 ### Create Object
+First thing start by creating the raw objects (models) in seperate classes.
+(http://i.imgur.com/GkFt4SP.png)
 ### 
 
 
