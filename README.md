@@ -3,7 +3,7 @@
 
 ```Connect your app with your api in 10 minutes only!``` 
 
-OssAPI is a Swift API template that makes dealing with objects and api calls super easy!
+***OssAPI*** is a Swift API template that makes dealing with objects and api calls super easy!
 
 
 
