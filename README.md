@@ -1,5 +1,5 @@
 
-![Imgur](http://i.imgur.com/6yeidSc.png)
+![Logo](http://i.imgur.com/I5KTaWb.png)
 
 ```Connect your app with your api in 10 minutes only!``` 
 
